@@ -6,3 +6,5 @@ Thumbs.db
 *.Ruserdata
 *.zip
 __MACOSX/
+algorithm/generated_data/
+algorithm/results/
