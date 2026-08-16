@@ -1,23 +1,26 @@
-# GTWR Housing Price Paper Code Bundle
+# GWQR
 
-This folder is a cleaned repository-style bundle for the paper:
+Code and materials for the geographically weighted (spatio-temporal) quantile
+regression project, including the published housing-price study and the
+accompanying R package.
 
-`基于异窗宽GTWR模型的商品住宅价格影响因素研究`
+Published paper:
 
-It consolidates the strongest local candidates for:
+> 侯健, 王芝皓, 田茂再, 窦燕. 基于异窗宽GTWR模型的商品住宅价格影响因素研究.
+> 数理统计与管理, 2022, 41(06): 1003-1014.
+>
+> Hou, J., Wang, Z., Tian, M., & Dou, Y. Influencing Factors of Commercial
+> Housing Prices Based on GTWR with Heterogeneous Bandwidths. Journal of
+> Applied Statistics and Management, 2022, 41(6): 1003-1014.
 
-- the GTWR algorithm scripts
-- the article-level empirical data and derived tables
-
-## Layout
+## Repository structure
 
 ```text
 README.md
-.gitignore
-empirical_analysis.R
 RUNNING.md
-run_simulation.R
-algorithm/
+empirical_analysis.R     # empirical data inspection
+run_simulation.R         # simulation entry point
+algorithm/               # GTWR estimation workflow
   main.R
   data_generation.R
   function_basic.R
@@ -25,46 +28,25 @@ algorithm/
   function_estimation.R
   simulation_pre.R
   calibration_n_times.R
-article_data/
+article_data/            # housing-price data and derived tables
   data.xlsx
   plotdata.csv
   pcaBeta.csv
   pcaData.xlsx
+package/LLQR/            # R package: local linear quantile regression (GWQR building blocks)
+  DESCRIPTION
+  NAMESPACE
+  R/  man/  data/  data-raw/
 ```
 
-## What Is Included
+## Notes
 
-`algorithm/` contains the best local candidate R implementation for the GTWR workflow.
-These files were recovered from an older `GWQR model` project in your local archive.
+- `algorithm/` scripts locate inputs dynamically relative to the script
+  directory; results are written to `algorithm/generated_data/` and
+  `algorithm/results/`.
+- The `package/LLQR` R package implements local linear quantile regression
+  components used by the GWQR workflow.
 
-`article_data/` contains the strongest local candidate data files associated with this
-paper's accepted and revision materials.
+## License
 
-## Important Limitations
-
-- The original paper folder did not contain a clearly named, self-contained final code repository.
-- The current bundle is a reconstruction from local materials.
-- `main.R` still contains an old absolute Windows path and may require manual path cleanup before execution.
-- The empirical paper data and the recovered algorithm scripts were stored separately in your archive, so this bundle should be treated as the best recovered local package, not a guaranteed final release snapshot.
-- The notebook `GTWR/code/Untitled.ipynb` was inspected and excluded because it does not appear to be the real analysis code.
-
-## Most Relevant Files
-
-- Main recovered driver:
-  - [algorithm/main.R](./algorithm/main.R)
-- Simulation entry:
-  - [run_simulation.R](./run_simulation.R)
-- Empirical data inspection entry:
-  - [empirical_analysis.R](./empirical_analysis.R)
-- Main empirical inputs:
-  - [article_data/data.xlsx](./article_data/data.xlsx)
-  - [article_data/plotdata.csv](./article_data/plotdata.csv)
-  - [article_data/pcaBeta.csv](./article_data/pcaBeta.csv)
-
-## Original Source Locations
-
-- Recovered algorithm scripts:
-  - `/Users/houjian/Library/CloudStorage/OneDrive-个人/paper/GWQR model/扩展工作/Partial Linear GWQR model/投稿工作/系统科学与数学(reject)/部分线性地理加权分位回归模型研究/data/houseprice/HP in beijing/codes/`
-- Recovered article data:
-  - `/Users/houjian/Library/CloudStorage/OneDrive-个人/paper/GWQR model/投稿工作/基于异窗宽GTWR模型的商品住宅价格影响因素研究/数理统计与管理(accept)/GTWR/`
-  - `/Users/houjian/Library/CloudStorage/OneDrive-个人/paper/GWQR model/投稿工作/基于异窗宽GTWR模型的商品住宅价格影响因素研究/数理统计与管理(accept)/数理统计投稿预修改/data/`
+See the license file of the R package (`package/LLQR`) for package code.
