@@ -8,11 +8,10 @@ Authors: c(
            family = "Jian",
            role = c("aut", "cre"),
            email = "houjian1997@ruc.edu.cn",
-           
     person(given = "Hu",
            family = "Jing",
            role = "aut",
-           email = "hujing1997@ruc.edu.cn"))
+           email = "hujing1997@ruc.edu.cn"),
     person(given = "Cheng",
            family = "Shuo",
            role = "aut",
