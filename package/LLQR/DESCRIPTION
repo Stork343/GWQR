@@ -8,7 +8,7 @@ Authors: c(
            family = "Jian",
            role = c("aut", "cre"),
            email = "houjian1997@ruc.edu.cn",
-           comment = c(ORCID = "YOUR-ORCID-ID")),
+           
     person(given = "Hu",
            family = "Jing",
            role = "aut",
@@ -16,7 +16,7 @@ Authors: c(
     person(given = "Cheng",
            family = "Shuo",
            role = "aut",
-           email = Chengshuo1998@ruc.edu.cn"))
+           email = "chengshuo1998@ruc.edu.cn"))
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 LinkingTo: Rcpp, RcppArmadillo
